@@ -52,7 +52,7 @@ class EPaper:
             stateInfo = battery.getInfo() 
 
             epd.Clear()
-            font30 = ImageFont.truetype(picdir + '/Helvetica.ttc', 40)
+            font30 = ImageFont.truetype(picdir + '/Font.ttc', 40)
             Himage = 'img'
             hasGameCard = card_image != 'default'
              
