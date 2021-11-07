@@ -9,4 +9,6 @@ Full list of components:
 - Lego for DIY enclosure  
 - Expired / used subway passes cards as a cartridges
 
+
+#
 ![alt text](https://raw.githubusercontent.com/wasdswag/MagicBox/main/MAGICBOX_ALL.jpg?raw=true)
