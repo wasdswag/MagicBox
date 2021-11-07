@@ -1,5 +1,5 @@
 # MagicBox
-My retro-game console rig based on Retropie / RPi 4 with NFC hat based cartridge imitation system and expired Moscow subway passcards
+My retro-game console rig based on Retropie / RPi 4 and NFC module for a cartridges imitation with used Moscow metro passcards
 
 Full list of components:
 - Raspberry Pi 4 / 4gb
