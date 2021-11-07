@@ -4,10 +4,7 @@ import time
 from gpiozero import CPUTemperature
 
 
-def test():
-	s = "TESTTTTT"
-	print (s)
-	return s
+
 
 
 # Config Register (R/W)
