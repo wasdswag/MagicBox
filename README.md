@@ -10,5 +10,6 @@ Full list of components:
 - Expired / used subway passes cards as a cartridges
 
 
+Thanks to @imdaftmike https://github.com/imdaftmike/NESPi for inspiration!
 #
 ![alt text](https://raw.githubusercontent.com/wasdswag/MagicBox/main/MAGICBOX_ALL.jpg?raw=true)
