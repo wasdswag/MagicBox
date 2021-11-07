@@ -6,8 +6,9 @@ import os
 import RPi.GPIO as GPIO
 from pn532 import *
 
-# directories
-runSketch = '/home/pi/bin/random_person.sh'
+# a path to my processing sketch which generate random graphic for screen in standby mode
+# comment line 160 to prevent errors :)
+# runSketch = '/home/pi/bin/random_person.sh'
 
 import subprocess
 from subprocess import PIPE, Popen
@@ -156,7 +157,7 @@ if __name__=='__main__':
         if NFCRead.card == False: 
              screen.EPaper.Update()
              time.sleep(180)
-             os.system(runSketch)
+             #os.system(runSketch)
         else:
              time.sleep(10)    
         
