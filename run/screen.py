@@ -1,5 +1,7 @@
 import os
 import sys
+import time
+
 
 
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
@@ -13,9 +15,9 @@ from waveshare_epd import epd4in01f
 from PIL import Image,ImageDraw,ImageFont
 
 rp_dir = '/home/pi/sketchbook/RandomPersonRetropie/RANDOM_DUDE.gif'
-
-
 import battery
+
+
 
 
 class EPaper:
@@ -29,7 +31,7 @@ class EPaper:
         logging.basicConfig(level=logging.DEBUG)
 
         try:
-            logging.info("init screen")
+            #logging.info("init screen")
             epd = epd4in01f.EPD()
 
             epd.init()
@@ -38,9 +40,14 @@ class EPaper:
 
 
         except IOError as e:
-            logging.info(e)
+            #logging.info(e)
+            epd4in01f.epdconfig.module_exit()
+            time.sleep(2)
+            #EPaper.Init()
+            exit()
+
         except KeyboardInterrupt:    
-            logging.info("ctrl + c:")
+            #logging.info("ctrl + c:")
             epd4in01f.epdconfig.module_exit()
             exit()
 
@@ -52,7 +59,7 @@ class EPaper:
             stateInfo = battery.getInfo() 
 
             epd.Clear()
-            font30 = ImageFont.truetype(picdir + '/Font.ttc', 40)
+            font30 = ImageFont.truetype(picdir + '/Helvetica.ttc', 40)
             Himage = 'img'
             hasGameCard = card_image != 'default'
              
@@ -61,7 +68,7 @@ class EPaper:
             else: 
                 Himage = Image.open(rp_dir)
                 Himage = Himage.resize((epd.height, epd.width))
-            
+        
              
             draw = ImageDraw.Draw(Himage)
             draw.text((22, 580), stateInfo, font = font30, fill = 255)
@@ -73,12 +80,19 @@ class EPaper:
                 
 
         except IOError as e:
-            logging.info(e)
+            #logging.info(e)
+            epd4in01f.epdconfig.module_exit()
+            time.sleep(2)
+            EPaper.Init()
+            exit()
+
         except KeyboardInterrupt:    
-            logging.info("ctrl + c:")
+            #logging.info("ctrl + c:")
             epd4in01f.epdconfig.module_exit()
             exit()
 
 
 epd = EPaper.Init()
+
+
 

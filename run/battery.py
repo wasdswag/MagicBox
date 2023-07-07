@@ -1,6 +1,7 @@
 
 import smbus
 import time
+import os
 from gpiozero import CPUTemperature
 
 
@@ -143,6 +144,10 @@ def getInfo():
      power = ina219.getPower_W()                        # power in W
      p = (bus_voltage - 6)/2.4*100
 
+     t = p / 90;
+     power = 100 * t;
+     #Lerp(float a, float b, float t) => a + (b - a) * Mathf.Clamp01(t);
+
      if(p > 100):p = 100
      if(p < 0):p = 0
      if(p < 2): os.system('sudo halt') 
@@ -156,10 +161,10 @@ def getInfo():
      #print("Percent:       {:3.1f}%".format(p))
      #print("")
 
-     battery = "PS{:3.0f}%".format(p)
+     battery = "PS{:3.0f}%".format(power)
      cpu = CPUTemperature().temperature
      cpuTemp = "CPU{:3.0f}°".format(cpu)
-     print(cpuTemp + ' | ' + battery)
+     #print(cpuTemp + ' | ' + battery)
 
      return cpuTemp + ' | ' + battery
 
