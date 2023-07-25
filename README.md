@@ -1,4 +1,4 @@
-# K O R O B O K  1.4 / ex. MagicBox
+# K O R O B O K   1.4  / ex. MagicBox
 
 update list:
 - added a console launcher menu
